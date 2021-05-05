@@ -1,0 +1,109 @@
+{
+  "functionFamilies": [
+    {
+      "family": "address",
+      "members": ["1","1X","1E","1EX","1A","1AX","1B","1N"]
+    },
+    {
+      "family": "blockface",
+      "members": ["3","3X","3C","3CX","3S"]
+    }
+  ],
+  "types": [
+    {
+      "name": "Borough",
+      "attributes": [
+        {
+          "code": { "dataType": "string", "unique": "true" }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "1",
+      "input": "Address",
+      "output": "Standardized Street Name and Street Code, Address Range, List of Cross Streets, ZIP Code, Community District, Health Area, Health Center District, 1990 Census Tract, 2000 and 2010 Census Tract and Block, Fire Engine or Ladder Company, School District, Police Precinct, DSNY District and Schedule, X-Y Coordinates (based on the State Plane Coordinate System)"
+    },
+    {
+      "name": "1X",
+      "input": "Address",
+      "output": "Same as Function 1 + Latitude/Longitude"
+    },
+    {
+      "name": "1E",
+      "input": "Address",
+      "output": "Same as Function 1 + Political Geography (Election District, Assembly District, Congressional District, City Council District, Municipal Court District and State Senatorial District)"
+    },
+    {
+      "name": "1EX",
+      "input": "Address",
+      "output": "Same as Function 1E + Latitude/Longitude"
+    },
+    {
+      "name": "1A",
+      "input": "Address",
+      "output": "Standardized Street Name and Street Code, Tax Block and Lot (BBL), Alternative Addresses for Lot, Building Identification Number (BIN), Latitude/Longitude, RPAD Building Class, Interior Lot Flag, Vacant Lot Flag, Irregularly-Shaped Lot Flag, Corner Code, etc."
+    },
+    {
+      "name": "1AX",
+      "input": "Address",
+      "output": "Same as Function 1A + <missing>"
+    },
+    {
+      "name": "1B",
+      "input": "Address",
+      "output": "Same as Function 1E + Property Level Information from Function 1A + Street Names for Cross Streets and Address Lists"
+    },
+    {
+      "name": "1N",
+      "input": "Street Name",
+      "output": "Standardized Street Name and Street Code"
+    },
+    {
+      "name": "2/2W",
+      "input": "Pair of Intersecting Streets, Named Intersection. or Node",
+      "output": "Standardized Street Name and Street Codes, List of Additional Cross Streets, ZIP Code, Community District, Health Area, Health Center District, 1990, 2000 and 2010 Census Tract, Fire Districts, School District, Police Precinct, DSNY District, X-Y Coordinates (based on State Plane Coordinate System). Function 2W (only) contains Latitude/Longitude, and the list of related nodes and cross streets."
+    },
+    {
+      "name": "3/3 Extended (a.k.a. 3X)",
+      "input": "On Street and a Pair of Consecutive Cross Streets",
+      "output": "Standardized Street Names and Street Codes, Lists of Cross Streets at both ends, and information about both sides of the street, (including ZIP Codes, Community Districts, Health Areas, Health Center Districts, 1990, 2000 and 2010 Census Tracts, Fire Districts, School Districts, Police Precincts). Latitude/Longitude in 3 Extended only."
+    },
+    {
+      "name": "3C/3C Extended (a.k.a.3CX)",
+      "input": "On Street/Pair of Consecutive Cross Streets/Compass Direction",
+      "output": "Same as Function 3 but for only one side of the street, as indicated by the compass direction (Block face information). Latitude/Longitude in 3C Extended only."
+    },
+    {
+      "name": "3S",
+      "input": "On Street and an Optional Pair of any Intersecting Streets along the On Street",
+      "output": "Street Stretch information: List of intersecting streets in order along ‘on’ street, the distance between them and node IDs"
+    },
+    {
+      "name": "AP/APX",
+      "input": "Address",
+      "output": "Address Point ID, Street Name and Street Code, Address Point Range, X-Y coordinates, BBL, BIN, etc."
+    },
+    {
+      "name": "BF, BB",
+      "input": "Char. String",
+      "output": "List of street names in alphabetic order - supports street name browsing"
+    },
+    {
+      "name": "BL/BL Extended (a.k.a. BLX)",
+      "input": "Tax Block and Lot",
+      "output": "List of Addresses Ranges for Lot, List of Building Identification Numbers (BINs), RPAD Building Class, Interior Lot Flag, Vacant Lot Flag, Corner Code, etc."
+    },
+    {
+      "name": "BN/BN Extended (a.k.a. BNX)",
+      "input": "Building Identification Number",
+      "output": "List of Address Ranges for Building, Tax Block and Lot, RPAD Building Class, Interior Lot Flag, Vacant Lot Flag, Irregularly Shaped Lot Flag, Corner Code etc."
+    },
+    {
+      "name": "D, DG, DN",
+      "input": "Street Code / House Nbr.",
+      "output": "Street Name and/or House Number in Displayable Format"
+    }
+  ]
+}
