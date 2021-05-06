@@ -19,14 +19,32 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/l
 WORKDIR /geosupport
 COPY . .
 
-RUN FILE_NAME=linux_geo${RELEASE}_${MAJOR}_${MINOR}.zip\
-    && echo $FILE_NAME\
-    && curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/$FILE_NAME\
-    && unzip *.zip\
+RUN FILE_NAME=linux_geo${RELEASE}_${MAJOR}_${MINOR}.zip \
+    && echo $FILE_NAME \
+    && curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/$FILE_NAME \
+    && unzip *.zip \
     && rm *.zip
 
 # Trailing slash ('/') is required
 ENV GEOFILES=/geosupport/version-${RELEASE}_${MAJOR}.${MINOR}/fls/
 ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/geosupport/version-${RELEASE}_${MAJOR}.${MINOR}/lib/
 
+#
+# To update all out-of-date packages:
+#
+#   RUN pip3 list --outdated --format=freeze | \
+#               grep -v '^\-e' | \
+#               cut -d = -f 1  | \
+#               xargs -n1 pip3 install -U
+#
+# To update pip and setuptools if they are outdated:
+#   RUN pip3 list --outdated --format=freeze | \
+#               grep -e 'pip==' -e 'setuptools==' | \
+#               cut -d = -f 1  | \
+#               xargs -n1 pip3 install -U
+#
+
+
+# Install pyenv, pyenv-cov
+# Install tox, tox-pyenv
 WORKDIR /
