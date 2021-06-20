@@ -1,0 +1,14 @@
+appdirs==1.4.4
+distlib==0.3.1
+filelock==3.0.12
+-e git+https://github.com/mlipper/forked.git@de311106363a8c5490fffc045cf3bd18abd42080#egg=forked
+packaging==20.9
+pipdeptree==2.0.0
+pluggy==0.13.1
+py==1.10.0
+pyparsing==2.4.7
+six==1.16.0
+toml==0.10.2
+tox==3.23.1
+tox-pyenv==1.1.0
+virtualenv==20.4.6
